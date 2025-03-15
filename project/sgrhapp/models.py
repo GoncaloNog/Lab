@@ -23,3 +23,4 @@ class Study(models.Model):
 
     def __str__(self):
         return self.name + ' by ' + self.user.username
+    
