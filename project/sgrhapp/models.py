@@ -26,7 +26,7 @@ class Study(models.Model):
     
     # Create your models here.
 class Cliente(models.Model):
-    cliente_id = models.AutoField(primary_key=True)
+    id_cliente = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=512, blank=True, null=True)
     morada = models.CharField(max_length=512, blank=True, null=True)
     dt_criacao = models.DateTimeField(default=datetime.now())
