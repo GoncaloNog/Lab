@@ -6,4 +6,4 @@ def index(request):
     return HttpResponse("Hello, world. You're at the index.")
 
 def VIEWNAME(request):
-    return HttpResponse("hei")
+    return HttpResponse("hei!")
