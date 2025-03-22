@@ -19,7 +19,7 @@
     },
     "database": "SQLite",
     "databaseName": "SGRH_schema",
-    "canvasType": "@vuerd/builtin-sql-ddl",
+    "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
