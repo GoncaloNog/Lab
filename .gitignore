@@ -1,4 +1,5 @@
 *.pyc
-.venv
+.venv/
 *.sqlite3
-project/sgrhapp/migrations
+project/sgrhapp/migrations/
+db/
