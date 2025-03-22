@@ -26,13 +26,4 @@ class Study(models.Model):
         return self.name + ' by ' + self.user.username """
     
     # Create your models here.
-class Cliente(models.Model):
-    cliente_id = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=512, blank=True, null=True)
-    morada = models.CharField(max_length=512, blank=True, null=True)
-    dt_criacao = models.DateTimeField(default=datetime.now())
-    email = models.CharField(max_length=512, blank=True, null=True)
-    telem = models.IntegerField(max_length=15, blank=True, null=True)
-    telef = models.IntegerField(max_length=15, blank=True, null=True)
-    class Meta:
-        db_table = 'cliente'
+
