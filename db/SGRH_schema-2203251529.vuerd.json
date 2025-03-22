@@ -19,7 +19,7 @@
     },
     "database": "SQLite",
     "databaseName": "SGRH_schema",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-generator-code",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -281,7 +281,7 @@
           "active": false,
           "left": 1026.5043,
           "top": 783.6626,
-          "zIndex": 333,
+          "zIndex": 6,
           "widthName": 70.65625,
           "widthComment": 60,
           "color": "#2196F3"
@@ -344,7 +344,7 @@
           "active": false,
           "left": 1016.6656,
           "top": 1269.0808,
-          "zIndex": 325,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -522,7 +522,7 @@
           "active": false,
           "left": 507.7724,
           "top": 1448.2681,
-          "zIndex": 327,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -700,7 +700,7 @@
           "active": false,
           "left": 54.4441,
           "top": 1209.7258,
-          "zIndex": 329,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -740,7 +740,7 @@
           "active": false,
           "left": 171.9624,
           "top": 704.9298,
-          "zIndex": 332,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60,
           "color": "#E91E63"
@@ -941,7 +941,7 @@
           "active": false,
           "left": 525.089,
           "top": 979.9495,
-          "zIndex": 328,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 65.603515625,
           "color": "#9C0702"
