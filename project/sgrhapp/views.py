@@ -7,3 +7,9 @@ def index(request):
 
 def VIEWNAME(request):
     return HttpResponse("hei!")
+
+def index(request):
+    return render(request, 'sgrhapp/index.html')
+
+def login_view(request):
+    return render(request, 'sgrhapp/login.html')
