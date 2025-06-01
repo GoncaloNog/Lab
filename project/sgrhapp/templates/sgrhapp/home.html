@@ -3,55 +3,46 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Bem-vindo</title>
+    <title>Dashboard - SGRH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #004225; /* British Racing Green */
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .home-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        .btn-logout {
-            background-color: #218838;
-            padding: 10px 20px;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .btn-logout:hover {
-            background-color: #28a745;
-        }
-    </style>
 </head>
-<body>
-    <div class="home-container">
-        <h1>Bem-vindo ao SGRH!</h1>
-        <p>Login efetuado com sucesso.</p>
-        <form method="POST">
+<body class="dashboard-page">
+    <div class="sidebar">
+        <h4 class="mb-4">SGRH</h4>
+        <a href="{% url 'home' %}">Dashboard</a>
+        <a href="{% url 'registar_ponto' %}">Registar Ponto</a>
+        <a href="{% url 'lista_colaboradores' %}">Colaboradores</a>
+        <a href="{% url 'adicionar_colaborador' %}">Novo Colaborador</a>
+        <a href="{% url 'relatorios' %}">Relatórios</a>
+        <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button class="btn">Terminar Sessão</a>
+            <button class="btn btn-danger w-100 mt-3">Logout</button>
         </form>
-        
+    </div>
+
+    <div class="main-content">
+        <h2 class="mb-4">Presenças de hoje</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            {% if registos_hoje %}
+                {% for registo in registos_hoje %}
+                <div class="col">
+                    <div class="card-colaborador p-3">
+                        <h5>{{ registo.id_colaborador.colaborador }}</h5>
+                        <p class="mb-1">Função: {{ registo.id_colaborador.funcao }}</p>
+                        <p class="mb-0"><small class="text-muted">Entrada: {{ registo.hora_entrada|time:"H:i" }}</small></p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col">
+                    <div class="card-colaborador card-novo">
+                        <a href="{% url 'registar_ponto' %}" class="text-decoration-none">+</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>

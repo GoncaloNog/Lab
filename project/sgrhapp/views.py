@@ -30,3 +30,19 @@ def home_view(request):
         logout(request)
         return render(request, 'sgrhapp/login.html')
     return render(request, 'sgrhapp/home.html')
+
+@login_required
+def registar_ponto_view(request):
+    return render(request, 'sgrhapp/registar_ponto.html')
+
+@login_required
+def lista_colaboradores_view(request):
+    return render(request, 'sgrhapp/lista_colaboradores.html')
+
+@login_required
+def adicionar_colaborador_view(request):
+    return render(request, 'sgrhapp/adicionar_colaborador.html')
+
+@login_required
+def relatorios_view(request):
+    return render(request, 'sgrhapp/relatorios.html')

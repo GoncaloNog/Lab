@@ -3,8 +3,48 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: url("../img/fundologin.png") no-repeat center center fixed;
+    background-color: #fdfaf6;
+    background-image: url("../img/fundologin.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-size: cover;
+}
+
+body.login-page {
+    background-image: url("../img/fundologin.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body.dashboard-page {
+    position: relative;
+    background-image: url("../img/caminho.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+body.dashboard-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* filtro escuro */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dashboard-page .sidebar,
+.dashboard-page .main-content {
+    position: relative;
+    z-index: 1;
 }
 
 /* Container do login com efeito de vidro */
@@ -34,8 +74,8 @@ body {
     margin: 10px 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     outline: none;
 }
 
@@ -64,3 +104,72 @@ body {
     margin-bottom: 10px;
 }
 
+/* Estilos da sidebar lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.5);
+    padding: 2rem 1rem;
+    z-index: 10;
+}
+
+.sidebar a {
+    color: white;
+    display: block;
+    margin: 1rem 0;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Área principal ao lado da sidebar */
+.main-content {
+    margin-left: 260px;
+    padding: 2rem;
+}
+
+/* Cartões com estilo glassmorphism */
+.card-colaborador {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.card-colaborador:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.card-novo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 3rem;
+    color: #6c757d;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
